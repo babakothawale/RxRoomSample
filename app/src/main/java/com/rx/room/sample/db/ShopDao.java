@@ -25,6 +25,9 @@ public interface ShopDao {
     @Delete
     int deleteShop(Shop shop);
 
+    @Query("DELETE from shop")
+    int deleteAll();
+
     @Update
     int updateShop(Shop shop);
 }

@@ -9,7 +9,7 @@ public class Injection {
 
     public static LocalDataSource provideUserDataSource(Context context) {
         SampleDatabase database = SampleDatabase.getInstance(context);
-        return new LocalDataSource(database.shopDao());
+        return new LocalDataSource(database.shopDao(), database.ownerDao());
     }
 
     public static ViewModelFactory provideViewModelFactory(Context context) {

@@ -6,11 +6,12 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-@android.arch.persistence.room.Database(entities = {Shop.class}, version = 1)
+@android.arch.persistence.room.Database(entities = {Shop.class, Owner.class}, version = 2)
 public abstract class SampleDatabase extends RoomDatabase {
     private static volatile SampleDatabase INSTANCE;
 
     public abstract ShopDao shopDao();
+    public abstract OwnerDao ownerDao();
 
     public static SampleDatabase getInstance(Context context) {
         if (INSTANCE == null) {
@@ -19,6 +20,7 @@ public abstract class SampleDatabase extends RoomDatabase {
                     INSTANCE = Room
                             .databaseBuilder(context.getApplicationContext(), SampleDatabase.class, "roomsample.db")
                             .addCallback(mOnCreateDbCallback)
+                            .addMigrations(DatabaseMigrations.MIGRATION_1_2)
                             .build();
                 }
             }

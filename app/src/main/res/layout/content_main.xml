@@ -40,13 +40,29 @@
         app:layout_constraintTop_toBottomOf="@id/button_loadList"
         />
 
+    <Button
+        android:id="@+id/button_delete_shops"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete all shops info"
+        app:layout_constraintTop_toBottomOf="@id/button_owner"
+        />
+
+    <Button
+        android:id="@+id/button_delete_owners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete All Owners info"
+        app:layout_constraintTop_toBottomOf="@id/button_delete_shops"
+        />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="#fff"
         android:paddingBottom="200dp"
-        app:layout_constraintTop_toBottomOf="@id/button_owner"
+        app:layout_constraintTop_toBottomOf="@id/button_delete_owners"
         />
 
 

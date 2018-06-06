@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
 import com.rx.room.sample.db.LocalDataSource;
+import com.rx.room.sample.ui.OwnerViewModel;
 import com.rx.room.sample.ui.ShopViewModel;
 
 /**
@@ -21,6 +22,8 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
     public <T extends ViewModel> T create(Class<T> modelClass) {
         if (modelClass.isAssignableFrom(ShopViewModel.class)) {
             return (T) new ShopViewModel(mDataSource);
+        } else if(modelClass.isAssignableFrom(OwnerViewModel.class)){
+            return (T) new OwnerViewModel(mDataSource);
         }
         throw new IllegalArgumentException("Unknown ViewModel class");
     }

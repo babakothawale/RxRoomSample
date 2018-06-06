@@ -49,7 +49,10 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
 
 
     public interface OnItemClickListener {
-        void onClick(Shop Item);
+        void onClick(Shop shop);
+        void onDeleteClick(Shop shop);
+
+        void onEditClick(Shop shop);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -72,6 +75,9 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
                     listener.onClick(shops);
                 }
             });
+
+            itemView.findViewById(R.id.imageview_delete).setOnClickListener((v)->listener.onDeleteClick(shops));
+            itemView.findViewById(R.id.imageview_edit).setOnClickListener((v)->listener.onEditClick(shops));
         }
     }
 
