@@ -1,10 +1,10 @@
-package com.rx.room.sample.ui;
+package com.rx.room.sample.viewmodel;
 
 import android.arch.lifecycle.ViewModel;
 
 import com.rx.room.sample.db.LocalDataSource;
-import com.rx.room.sample.db.Shop;
-import com.rx.room.sample.db.ShopDao;
+import com.rx.room.sample.entity.Shop;
+import com.rx.room.sample.dao.ShopDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,6 @@ import java.util.concurrent.Callable;
 
 import io.reactivex.Completable;
 import io.reactivex.Flowable;
-import io.reactivex.functions.Action;
 import io.reactivex.schedulers.Schedulers;
 
 public class ShopViewModel extends ViewModel {
@@ -23,7 +22,7 @@ public class ShopViewModel extends ViewModel {
         mShopDao = localDataSource.shopDao;
     }
 
-    Flowable<List<Shop>> getShops() {
+    public Flowable<List<Shop>> getShops() {
         return mShopDao.getShops();
     }
 
@@ -49,15 +48,15 @@ public class ShopViewModel extends ViewModel {
 
     }
 
-    Completable deleteShop(Shop shop) {
+    public Completable deleteShop(Shop shop) {
         return Completable.fromAction(() -> mShopDao.deleteShop(shop)).subscribeOn(Schedulers.io());
     }
 
-    Completable updateShop(Shop shop) {
+    public Completable updateShop(Shop shop) {
         return Completable.fromAction(()->mShopDao.updateShop(shop)).subscribeOn(Schedulers.io());
     }
 
-    Completable deleteAllShops(){
+    public Completable deleteAllShops(){
         return Completable.fromAction(()->mShopDao.deleteAll()).subscribeOn(Schedulers.io());
     }
 

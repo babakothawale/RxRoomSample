@@ -1,4 +1,4 @@
-package com.rx.room.sample.Adapter;
+package com.rx.room.sample.ui.Adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.rx.room.sample.R;
-import com.rx.room.sample.db.Owner;
+import com.rx.room.sample.entity.Owner;
 
 import java.util.List;
 

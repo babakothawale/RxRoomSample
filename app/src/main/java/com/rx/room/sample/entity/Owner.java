@@ -1,4 +1,4 @@
-package com.rx.room.sample.db;
+package com.rx.room.sample.entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -23,27 +23,24 @@ public class Owner {
         this.phone=phone;
     }
 
-    @Ignore
+
+
     public long getId() {
         return id;
     }
 
-    @Ignore
     public long getOwnerId() {
         return ownerId;
     }
 
-    @Ignore
     public String getName() {
         return name;
     }
 
-    @Ignore
     public String getPhone() {
         return phone;
     }
 
-    @Ignore
     public String getAddress() {
         return address;
     }

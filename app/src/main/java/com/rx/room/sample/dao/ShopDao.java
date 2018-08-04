@@ -1,10 +1,12 @@
-package com.rx.room.sample.db;
+package com.rx.room.sample.dao;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
+
+import com.rx.room.sample.entity.Shop;
 
 import java.util.List;
 

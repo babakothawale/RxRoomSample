@@ -1,10 +1,10 @@
-package com.rx.room.sample.ui;
+package com.rx.room.sample.viewmodel;
 
 import android.arch.lifecycle.ViewModel;
 
 import com.rx.room.sample.db.LocalDataSource;
-import com.rx.room.sample.db.OwnerDao;
-import com.rx.room.sample.db.Owner;
+import com.rx.room.sample.dao.OwnerDao;
+import com.rx.room.sample.entity.Owner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ public class OwnerViewModel extends ViewModel {
         mOwnerDao = dataSource.ownerDao;
     }
 
-    Flowable<List<Owner>> getOwners() {
+    public Flowable<List<Owner>> getOwners() {
         return mOwnerDao.getOwners();
     }
 

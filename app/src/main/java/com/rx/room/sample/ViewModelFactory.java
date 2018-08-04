@@ -4,8 +4,8 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
 import com.rx.room.sample.db.LocalDataSource;
-import com.rx.room.sample.ui.OwnerViewModel;
-import com.rx.room.sample.ui.ShopViewModel;
+import com.rx.room.sample.viewmodel.OwnerViewModel;
+import com.rx.room.sample.viewmodel.ShopViewModel;
 
 /**
  * Factory for ViewModels

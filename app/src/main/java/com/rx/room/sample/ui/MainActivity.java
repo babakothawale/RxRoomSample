@@ -16,13 +16,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.rx.room.sample.Adapter.OwnerAdapter;
-import com.rx.room.sample.Adapter.ShopAdapter;
+import com.rx.room.sample.ui.Adapter.OwnerAdapter;
+import com.rx.room.sample.ui.Adapter.ShopAdapter;
 import com.rx.room.sample.Injection;
 import com.rx.room.sample.R;
 import com.rx.room.sample.ViewModelFactory;
-import com.rx.room.sample.db.Owner;
-import com.rx.room.sample.db.Shop;
+import com.rx.room.sample.entity.Owner;
+import com.rx.room.sample.entity.Shop;
+import com.rx.room.sample.viewmodel.OwnerViewModel;
+import com.rx.room.sample.viewmodel.ShopViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

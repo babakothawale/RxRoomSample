@@ -6,6 +6,11 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.rx.room.sample.dao.OwnerDao;
+import com.rx.room.sample.dao.ShopDao;
+import com.rx.room.sample.entity.Owner;
+import com.rx.room.sample.entity.Shop;
+
 @android.arch.persistence.room.Database(entities = {Shop.class, Owner.class}, version = 2)
 public abstract class SampleDatabase extends RoomDatabase {
     private static volatile SampleDatabase INSTANCE;
